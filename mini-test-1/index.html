@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stamp Mini Test 1</title>
+  </head>
+  <body>
+    <div id="output"></div>
+  </body>
+  <script>
+    const arrNumber = [];
+    for (let i = 1; i <= 100; i++) {
+      arrNumber.push(i);
+    }
+    arrNumber.reverse();
+
+    const checkPrime = (n) => {
+      if (n <= 1) {
+        return false;
+      }
+
+      for (let i = 2; i < n; i++) {
+        if (n % i === 0) {
+          return false;
+        }
+      }
+
+      return true;
+    };
+
+    for (let i = 0; i <= arrNumber.length; i++) {
+      if (!checkPrime(arrNumber[i])) {
+        if (arrNumber[i] % 3 === 0 && arrNumber[i] % 5 === 0)
+          arrNumber[i] = "FooBar";
+        else if (arrNumber[i] % 3 === 0) arrNumber[i] = "Foo";
+        else if (arrNumber[i] % 5 === 0) arrNumber[i] = "Bar";
+
+        document.getElementById("output").innerHTML += `${arrNumber[i]}, `;
+      }
+    }
+  </script>
+</html>

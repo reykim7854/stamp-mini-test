@@ -1,0 +1,1 @@
+# stamp-mini-test
